@@ -84,3 +84,16 @@ describe('Get limits', function() {
 			});
 	});
 });
+
+describe('Shift', function () {
+
+	it('Should return an object', function (done) {
+		shapeshift.shift('doge_clam', 'xTqpqjptSnHPkiGpJY4R3JpVfQcdW8cia9', '9yMG34a76F6mW8TAjaoGjkckSww5W4HNdN').then(function (data) {
+			var body = data.body;
+
+			expect(data).to.have.all.keys('deposit', 'depositType', 'withdrawal', 'withdrawalType');
+			done();
+		}, function (err) { done(err); }).catch(function (err) { done(err); });
+	});
+
+});
